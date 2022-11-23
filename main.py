@@ -5,7 +5,7 @@ for i in range(9):
     row = list(input("Enter the elements of row {} without any ',' ' ': ".format(i+1)))
     row = [int(i) for i in row]
     sudoko.append(row)
-print(np.matrix(suduko))
+print(np.matrix(sudoko))
 
 def possible(y,x,n):
     global sudoko
@@ -28,9 +28,9 @@ def solve():
             if sudoko[y][x] == 0:
                 for n in range(1,10):
                     if possible(y,x,n):
-                        suduko[y][x] = n
+                        sudoko[y][x] = n
                         solve()
-                        suduko[y][x] = 0
+                        sudoko[y][x] = 0
                 return
     print(np.matrix(sudoko))
    
